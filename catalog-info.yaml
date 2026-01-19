@@ -7,9 +7,9 @@ metadata:
    files locally and versions them, allowing you to semantically version your
    service chasses.
   annotations:
-    github.com/project-slug: NFIBrokerage/harness
-    backstage.io/source-ref: https://github.com/NFIBrokerage/harness
-    backstage.io/github-actions-id: https://github.com/NFIBrokerage/harness
+    github.com/project-slug: CuatroElixir/harness
+    backstage.io/source-ref: https://github.com/CuatroElixir/harness
+    backstage.io/github-actions-id: https://github.com/CuatroElixir/harness
   tags:
   - config
   - eex

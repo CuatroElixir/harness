@@ -3,7 +3,7 @@ defmodule Harness.MixProject do
 
   @version_file Path.join(__DIR__, ".version")
   @external_resource @version_file
-  @source_url "https://github.com/NFIBrokerage/harness"
+  @source_url "https://github.com/CuatroElixir/harness"
 
   def project do
     [
@@ -53,7 +53,7 @@ defmodule Harness.MixProject do
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       # test
       {:bless, "~> 1.0", only: :test},
-      {:convene, "~> 0.2", organization: "cuatro", only: :test},
+      {:credo, "~> 1.7", only: :test},
       {:excoveralls, "~> 0.7", only: :test}
     ]
   end

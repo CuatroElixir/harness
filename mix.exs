@@ -3,12 +3,18 @@ defmodule Harness.MixProject do
 
   @version_file Path.join(__DIR__, ".version")
   @external_resource @version_file
-  @source_url "https://github.com/NFIBrokerage/harness"
+  @source_url "https://github.com/CuatroElixir/harness"
+  @version (case Regex.run(~r/^v([\d\.\w-]+)/, File.read!(@version_file),
+                   capture: :all_but_first
+                 ) do
+              [version] -> version
+              nil -> "0.0.0"
+            end)
 
   def project do
     [
       app: :harness,
-      version: version() || "0.0.0",
+      version: @version,
       elixir: "~> 1.9",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
@@ -28,16 +34,6 @@ defmodule Harness.MixProject do
     ]
   end
 
-  defp version do
-    Regex.run(
-      ~r/^v([\d\.]+)/,
-      File.read!(@version_file),
-      capture: :all_but_first
-    )
-    |> List.wrap()
-    |> List.first()
-  end
-
   defp elixirc_paths(:test), do: ["lib", "test/fixtures"]
   defp elixirc_paths(_), do: ["lib"]
 
@@ -53,7 +49,7 @@ defmodule Harness.MixProject do
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       # test
       {:bless, "~> 1.0", only: :test},
-      {:convene, "~> 0.2", organization: "cuatro", only: :test},
+      {:credo, "~> 1.7", only: :test},
       {:excoveralls, "~> 0.7", only: :test}
     ]
   end

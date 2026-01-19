@@ -1,6 +1,6 @@
 # Harness
 
-![Actions CI](https://github.com/NFIBrokerage/harness/workflows/Actions%20CI/badge.svg)
+![Actions CI](https://github.com/CuatroElixir/harness/workflows/Actions%20CI/badge.svg)
 
 A command line tool for harnessing Elixir boilerplate.
 
@@ -41,4 +41,4 @@ asdf global elixir 1.10.4-otp-22
 mix archive.install hex harness --force
 ```
 
-[harness-dotfiles]: https://github.com/NFIBrokerage/harness_dotfiles
+[harness-dotfiles]: https://github.com/CuatroElixir/harness_dotfiles
